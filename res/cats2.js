@@ -1,30 +1,21 @@
-(function() {
+(function(app) {
 	
-	/**
-	 * Single var pattern 
-	 */
-	var Cat,
-		Cats,
-		CatView,
-		CatsView;  
-
-
-	Cat = Backbone.Model.extend({
+	app.Cat = Backbone.Model.extend({
 		defaults: {
 			color: "",
 			name: ""
 		}
 	});
 
-	Cats = Backbone.Collection.extend({
+	app.Cats = Backbone.Collection.extend({
 
 		// the keys are the same like on Backend
 		// in this case we dont need custom model
 		// will be enought to remove 24 line and 12-17 lines 
-		model: Cat
+		model: app.Cat
 	});
 
-	CatView = Backbone.View.extend({
+	app.CatView = Backbone.View.extend({
 
 		className: "cat",
 		
@@ -36,7 +27,7 @@
 		}
 	});	
 
-	CatsView = Backbone.View.extend({
+	app.CatsView = Backbone.View.extend({
 
 		events: {
 			"click": "addAllCats"
@@ -47,7 +38,7 @@
 			// http://ricostacruz.com/backbone-patterns/#bootstrapping_data
 
 			// add Models during initializing
-			this.collection = new Cats([
+			this.collection = new app.Cats([
 				{color: "black", name: "Barsik"},
 				{color: "gray",  name: "Murzik"},
 				{color: "green", name: "House M.D."},
@@ -61,11 +52,11 @@
 		},
 
 		addOneCat: function (model) {
-			var view = new CatView({model: model});
+			var view = new app.CatView({model: model});
 			this.$el.append(view.render().el);
 		}
 	});
-})();
+})(window);
 
 /**
  * $() abuse
