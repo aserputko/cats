@@ -5,7 +5,7 @@ $(function() {
 				// much betted have 1 argument. it should be Object  {color: [string], name: [string]}
 
 				//  much betted defaulst
-				// Please look on https://github.com/ASerputko/cats/blob/master/res/cats2.js#L13
+				// Please look on https://github.com/ASerputko/cats/blob/master/res/cats2.js#L4
 				this.color = color;
 				this.name = name;
 			},
@@ -18,7 +18,7 @@ $(function() {
 				this.add(new Cat("green", "House M.D."));
 				this.add(new Cat("white", "Pushok"));   
 				// NOTE: you can add Models during initializing
-				// Please look on https://github.com/ASerputko/cats/blob/master/res/cats2.js#L50
+				// Please look on https://github.com/ASerputko/cats/blob/master/res/cats2.js#L41
 			}
 		});
 		
@@ -33,7 +33,7 @@ $(function() {
 				// this.model.toJSON()
 				// or
 				// this.model.attributes
-				// https://github.com/ASerputko/cats/blob/master/res/cats2.js#L34
+				// https://github.com/ASerputko/cats/blob/master/res/cats2.js#L23
 				this.$el.html(this.template({color: this.model.color, name: this.model.name}));				
 				return this;	
 			}
